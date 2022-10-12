@@ -6,6 +6,6 @@
         //public IQueryable getAtBuilding(string facility, string dateRange);
         //public IQueryable getAtFacility(string facility, string dateRange);    
 
-        public IQueryable getAtLevel(string facility, DateTime startDate, DateTime endDate, string levelOfInformation);
+        public IQueryable getAtLevel(string levelOfInformation, DateTime startDate, DateTime endDate);
     }
 }
