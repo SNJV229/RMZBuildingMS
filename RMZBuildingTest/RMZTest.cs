@@ -38,7 +38,7 @@ namespace RMZBuildingTest
                 zoneWaterreading = 268.0
             };
 
-            A.CallTo(() => _iGetInfo.getAtLevel(A<string>.Ignored, A<DateTime>.Ignored, A<DateTime>.Ignored)).Returns(obj);
+            A.CallTo(() => _iGetInfo.getAtLevel(A<string>.Ignored, A<DateTime>.Ignored, A<DateTime>.Ignored));
 
             var result = _rmzController.GetActionResult(facilitylevel, startDate, EndDate);
 
