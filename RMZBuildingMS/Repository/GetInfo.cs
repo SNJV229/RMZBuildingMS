@@ -58,7 +58,7 @@ namespace RMZBuildingMS.Repository
             else
             {
                 var result = _context.zones.Where(x => x.ReadingDate >= startDate && x.ReadingDate <= endDate)
-                    .Join(_context.Facilities, f => f.FacilityId, z => z.FacilityId, (f,b) => new { f.ElectricMeter, f.WaterMeter, f.Facility.FacilityName})
+                    .Join(_context.Facilities, f => f.FacilityId, z => z.FacilityId, (f,z ) => new { f.ElectricMeter, f.WaterMeter, f.Facility.FacilityName})
                     .GroupBy(f => f.FacilityName)
                     .Select(x => new { ElectricMeter = x.Select(g => g.ElectricMeter).Sum(), WaterMeter = x.Select(h => h.WaterMeter).Sum(), FacilityName = x.Key });
                 return result;
