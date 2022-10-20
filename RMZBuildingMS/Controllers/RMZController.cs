@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RMZBuildingMS.Authentication;
 using RMZBuildingMS.Models;
 using RMZBuildingMS.Repository;
 
 namespace RMZBuildingMS.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     [Route("api/[controller]")]
     [ApiController]
     public class RMZController : ControllerBase
